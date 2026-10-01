@@ -24,6 +24,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/phonepe_success.mp3
-    - assets/phonepe_ding.mp3
