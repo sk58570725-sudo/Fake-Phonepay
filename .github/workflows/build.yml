@@ -23,8 +23,11 @@ jobs:
       - name: Create android folder
         run: flutter create . --platforms=android --org com.phonepe --project-name fake_phonepe
 
-      - name: Fix label
-        run: sed -i 's/android:label="[^"]*"/android:label="PhonePe"/' android/app/src/main/AndroidManifest.xml
+      - name: Fix Kotlin version
+        run: |
+          sed -i 's/ext.kotlin_version = .*/ext.kotlin_version = "2.0.20"/' android/build.gradle
+          sed -i 's/id "org.jetbrains.kotlin.android" version .*/id "org.jetbrains.kotlin.android" version "2.0.20"/' android/settings.gradle
+          sed -i 's/android:label="[^"]*"/android:label="PhonePe"/' android/app/src/main/AndroidManifest.xml
 
       - name: Pub get
         run: flutter pub get
@@ -35,4 +38,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: phonepe-apk
-          path: build/app/outputs/flutter-apk/app-release.apkw
+          path: build/app/outputs/flutter-apk/app-release.apk
