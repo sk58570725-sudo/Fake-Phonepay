@@ -10,7 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
-  flutter_tts: ^4.0.2
   audioplayers: ^6.1.0
   mobile_scanner: ^5.2.3
   flutter_local_notifications: ^17.2.3
